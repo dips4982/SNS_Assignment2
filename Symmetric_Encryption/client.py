@@ -112,9 +112,11 @@ def client_program():
         # client_socket.send(test)  # send message
         # client_socket.send(message.encode())
         data = client_socket.recv(1024)  # receive response
+        print('Cipher Text Received :')
         print(data)
         plain_text = Decryption(data, counter)
-        print('Received from server: ' + plain_text)  # show in terminal
+        print('Received from server (after decryption): ' +
+              plain_text)  # show in terminal
 
         message = input(" -> ")  # again take input
 

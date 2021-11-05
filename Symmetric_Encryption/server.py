@@ -114,12 +114,13 @@ def server_program():
     while True:
         # receive data stream. it won't accept data packet greater than 1024 bytes
         data = conn.recv(1024)
+        print('Cipher Text Received :')
         print(data)
         plain_text = Decryption(data, counter)
         if not data:
             # if data is not received break
             break
-        print("from connected user: " + str(plain_text))
+        print("Decrypted Message from connected user: " + str(plain_text))
         data = input(' -> ')
         ciphertext = Encryption(data, counter)
         conn.send(ciphertext)  # send data to the client
