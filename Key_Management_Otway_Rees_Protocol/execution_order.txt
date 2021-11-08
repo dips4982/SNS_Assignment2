@@ -1,6 +1,18 @@
-From Alice to Bob
-From Bob to KDC
-From KDC to Bob
-From Bob to Alice
-From Alice to Bob
+From Alice to Bob 1
+{"Alice": "Alice", "Bob": "Bob", "R": 9540, "Alice_string_cipher": "746f93df282a3f779ec40dc478805b157e14c84fbd7c3ec20d640b0bbdfd7e0a7e94148dd5aa648f7936ef1697f4a2c8d3a9e3a12841d172"}
 
+From Bob to KDC 2
+{"Alice_string_cipher": "746f93df282a3f779ec40dc478805b157e14c84fbd7c3ec20d640b0bbdfd7e0a7e94148dd5aa648f7936ef1697f4a2c8d3a9e3a12841d172", "Bob_string_cipher": "7d980af3391e31c3cd1fa804519eb480072b08476df3a5689e3b31fc8764af14b3ad503601de833a3ce39c9135402a4fe09292aafb1ca951"}
+
+Authentication Successful
+
+From KDC to Bob 3
+{"Alice_key_set_cipher": "9d291ac4a165f6f61b38f630cee9f5b8c2248ea9de691d8050f15106b703de0e51a9b8d5f31d39d4", "Bob_key_set_cipher": "94871078cfa2803b631db9015fa1d0f94ebabb57e55e1caeef45dfd7c5bd14803086c05136752b9c", "R": 9540}
+
+From Bob to Alice 4
+9d291ac4a165f6f61b38f630cee9f5b8c2248ea9de691d8050f15106b703de0e51a9b8d5f31d39d4
+
+Alice to Bob 5
+6a3b2ae94e93a96acbd0b95d5785ce8ffce2e709a7923a2444ec7f8729780d8ee3ce38f0f2abb9507c2c5266cc6de45c
+
+This is a message sent from Alice to Bob
