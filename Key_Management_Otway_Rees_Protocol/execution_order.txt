@@ -1,0 +1,6 @@
+From Alice to Bob
+From Bob to KDC
+From KDC to Bob
+From Bob to Alice
+From Alice to Bob
+
