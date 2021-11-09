@@ -7,12 +7,12 @@ From Bob to KDC 2
 Authentication Successful
 
 From KDC to Bob 3
-{"Alice_key_set_cipher": "9d291ac4a165f6f61b38f630cee9f5b8c2248ea9de691d8050f15106b703de0e51a9b8d5f31d39d4", "Bob_key_set_cipher": "94871078cfa2803b631db9015fa1d0f94ebabb57e55e1caeef45dfd7c5bd14803086c05136752b9c", "R": 9540}
+{"Alice_key_set_cipher": "9d291ac4a165f6f61b38f630cee9f5b8b215d0d9bba4910aef98903eaa305bca7a3dd6d03433f131", "Bob_key_set_cipher": "94871078cfa2803b631db9015fa1d0f952a4a81eaeab8189f79cbae6df53f0726c1d98d7d6349c9f", "R": 9540}
 
 From Bob to Alice 4
-9d291ac4a165f6f61b38f630cee9f5b8c2248ea9de691d8050f15106b703de0e51a9b8d5f31d39d4
+9d291ac4a165f6f61b38f630cee9f5b8b215d0d9bba4910aef98903eaa305bca7a3dd6d03433f131
 
 Alice to Bob 5
-6a3b2ae94e93a96acbd0b95d5785ce8ffce2e709a7923a2444ec7f8729780d8ee3ce38f0f2abb9507c2c5266cc6de45c
+e04793b8d0591e979dd05f46d1b8924b25058e6c17036918eb1c6138c605fad894591dbe63f62fb3695c4761d42d9e79
 
 This is a message sent from Alice to Bob
