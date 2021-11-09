@@ -2,6 +2,8 @@ from Crypto.Util.number import *
 from random import *
 from hashlib import sha1
 
+# Digital Signature Standard
+
 
 def generate_key():
     p = getPrime(10)

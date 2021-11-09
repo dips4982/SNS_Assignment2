@@ -7,7 +7,7 @@ This repository contains Python implementation for DES in counter mode, Digital 
 To setup project in your local
 
 ```bash
-git clone [https://github.com/dips4982/SNS_Assignment2.git](https://github.com/dips4982/SNS_Assignment2.git) 
+git clone https://github.com/dips4982/SNS_Assignment2.git 
 ```
 
 Install Pycryptodome package
