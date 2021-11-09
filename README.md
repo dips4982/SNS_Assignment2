@@ -40,6 +40,7 @@ python3 Alice.py
 ## Asymmetric Encryption
 
 Digital Signature Standard Algorithm has been used
+
 Files : 
 DSS_key_generation.py : Run this file to generate required set of parameters and keys
 params.txt            : Stores the output of key generation
@@ -68,5 +69,36 @@ python3 Signer_Alice.py
 
 ## Entity Authentication
 
+Entity Authentication is implemented using Guillou-Quisquater protocol
+The three exchanges constitute a round;
+Claimant sends witness x = pow(r,e)%n
+Verifier sends challenge c, c is random number between 1 and e
+Claimant sends response y = r*pow(s,c)%n
+
+Files :
+GQ_key_generation.py : Generates keys and parameters required for Entity Authentication
+params.txt           : Saves output of above key generation
+Claimant_Alice.py    : code for claimant
+Verifier_Bob.py      : code for verifier
+
+To execute :
+
+Generate keys and params :
+
+```bash
+python3 GQ_key_generation.py
+```
+
+First Run Verifier_Bob.py which acts as server
+
+```bash
+python3 Verifier_Bob.py
+```
+
+Then Run Claimant_Alice.py which is the client
+
+```bash
+python3 Claimant_Alice.py
+```
 
 

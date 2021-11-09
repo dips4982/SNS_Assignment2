@@ -26,8 +26,10 @@ def client_program():
     while message.lower().strip() != 'bye':
         r = randint(1, n)
         x = pow(r, e, n)
+        print(" Sending Witness ")
         client_socket.send(str(x).encode())  # send witness
         # client_socket.send(message.encode())
+        print(" Receiving Challenge ")
         data = client_socket.recv(1024).decode()  # receive challenge
         c = int(data)
         print('From Verifier Challenge: ' + str(c))

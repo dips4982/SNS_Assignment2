@@ -36,6 +36,7 @@ def server_program():
 
         # print("from connected user: " + str(data))
         # data = input(' -> ')
+        print("Sending Challenge: " + str(c))
         conn.send(str(c).encode())  # send challenge
         data = conn.recv(1024).decode()  # get response
         print('From Claimant Response : ' + data)
