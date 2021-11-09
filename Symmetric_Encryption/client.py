@@ -81,14 +81,14 @@ def Encryption(plaintext, counter):
 
 
 def Decryption(ciphertext, counter):
-    decrypted_counter = encrypt(counter)
+    encrypted_counter = encrypt(counter)
     size = len(ciphertext)
     plaintext = ""
     for x in range(0, size, 8):
-        decrypted_text = byte_xor(decrypted_counter, ciphertext[x:x+8])
+        decrypted_text = byte_xor(encrypted_counter, ciphertext[x:x+8])
         plaintext += to_ascii(decrypted_text)
         counter = increment_binary_string(counter)
-        decrypted_counter = encrypt(counter)
+        encrypted_counter = encrypt(counter)
 
     return plaintext
 # Alice
