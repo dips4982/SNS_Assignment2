@@ -42,12 +42,16 @@ def to_ascii(decrypted_text):
     return ascii_text
 
 
+roll_num = "52"
+roll_num_bin = to_bin(roll_num)
 input_text = input('Enter text to encrypt: ')
 input_text_bin = to_bin(input_text)
 length = len(input_text_bin)//2
 left = input_text_bin[:length]
 right = input_text_bin[length:]
-
+print(roll_num_bin)
+print(left)
+print(right)
 
 key1 = os.urandom(length)
 key2 = os.urandom(length)
