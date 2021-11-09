@@ -5,7 +5,6 @@ import os
 
 key = b'\x8e\xc8U!\xa0\x14o\xc1'
 counter = b'00101100'
-counter2 = b'00101100'
 
 
 def to_bin(inp):
@@ -61,9 +60,11 @@ def to_ascii(decrypted_text):
 
         return ascii_text
 
-    except Exception as e:
-        print(e)
+    except ValueError:
         return ""
+
+    except TypeError:
+        pass
 
 
 def Encryption(plaintext, counter):
@@ -81,47 +82,50 @@ def Encryption(plaintext, counter):
 
 
 def Decryption(ciphertext, counter):
-    encrypted_counter = encrypt(counter)
+    decrypted_counter = encrypt(counter)
     size = len(ciphertext)
     plaintext = ""
     for x in range(0, size, 8):
-        decrypted_text = byte_xor(encrypted_counter, ciphertext[x:x+8])
+        decrypted_text = byte_xor(decrypted_counter, ciphertext[x:x+8])
         plaintext += to_ascii(decrypted_text)
         counter = increment_binary_string(counter)
-        encrypted_counter = encrypt(counter)
+        decrypted_counter = encrypt(counter)
 
     return plaintext
-# Alice
-# Two way channel for communication
-# Alice -> Bob
-# Bob -> Alice
+# Bob
+
+# def DES_Counter_Mode
 
 
-def client_program():
-    host = socket.gethostname()  # as both code is running on same pc
-    port = 5000  # socket server port number
+def server_program():
+    # get the hostname
+    host = socket.gethostname()
+    port = 5000  # initiate port no above 1024
 
-    client_socket = socket.socket()  # instantiate
-    client_socket.connect((host, port))  # connect to the server
+    server_socket = socket.socket()  # get instance
+    # look closely. The bind() function takes tuple as argument
+    server_socket.bind((host, port))  # bind host address and port together
 
-    message = input(" -> ")  # take input
-
-    while message.lower().strip() != 'bye':
-        cipher_text = Encryption(message, counter)
-        client_socket.send(cipher_text)  # send message
-        # client_socket.send(test)  # send message
-        # client_socket.send(message.encode())
-        data = client_socket.recv(1024)  # receive response
+    # configure how many client the server can listen simultaneously
+    server_socket.listen(2)
+    conn, address = server_socket.accept()  # accept new connection
+    print("Connection from: " + str(address))
+    while True:
+        # receive data stream. it won't accept data packet greater than 1024 bytes
+        data = conn.recv(1024)
         print('Cipher Text Received :')
         print(data)
         plain_text = Decryption(data, counter)
-        print('Received from server (after decryption): ' +
-              plain_text)  # show in terminal
+        if not data:
+            # if data is not received break
+            break
+        print("Decrypted Message from Alice: " + str(plain_text))
+        data = input(' Enter message for Alice: ')
+        ciphertext = Encryption(data, counter)
+        conn.send(ciphertext)  # send data to the client
 
-        message = input(" -> ")  # again take input
-
-    client_socket.close()  # close the connection
+    conn.close()  # close the connection
 
 
 if __name__ == '__main__':
-    client_program()
+    server_program()

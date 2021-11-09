@@ -53,7 +53,8 @@ def client_program():
     e2 = content_modif[4]
     file.close()
 
-    message = input(" -> ")  # take input
+    message = input(
+        " Enter a message to Bob to verify signature: ")  # take input
 
     while message.lower().strip() != 'bye':
         r, s1, s2 = signing(message, int(p), int(q), int(d), int(e1), int(e2))
@@ -65,7 +66,8 @@ def client_program():
 
         print('Received from server: ' + data)  # show in terminal
 
-        message = input(" -> ")  # again take input
+        # again take input
+        message = input(" Enter a message to Bob to verify signature: ")
 
     client_socket.close()  # close the connection
 
