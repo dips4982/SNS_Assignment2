@@ -15,6 +15,32 @@ Install Pycryptodome package
 ```bash
 pip install pycryptodome
 ```
+## Two Round Fiestal Cipher
+
+Files :\
+keygen.py  : Genertes keys 1 and 2 require for two rounds\
+params.txt : Stores the output of key_generation\
+Alice.py   : code for client that sends encrypted text\
+Bob.py     : code for server that receives encrypted text and decrypts it\
+
+To execute :\ 
+
+To generate keys 
+
+```bash
+python3 DSS_keygen.py
+```
+
+First Run Bob.py acts as server
+
+```bash
+python3 Bob.py
+```
+Then Run Alice.py in seperate terminal
+
+```bash
+python3 Alice.py
+```
 
 ## Symmetric Encryption
 
